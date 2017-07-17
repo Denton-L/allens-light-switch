@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import RPi.GPIO as GPIO
 
 class Motor:
@@ -27,3 +29,20 @@ class Motor:
 
     def down(self):
         self.__changeDutyCycle(2.0)
+
+if __name__ == '__main__':
+    from time import sleep
+
+    motor = Motor()
+    try:
+        while True:
+            motor.up()
+            sleep(0.5)
+            motor.middle()
+            sleep(0.5)
+            motor.down()
+            sleep(0.5)
+            motor.middle()
+            sleep(0.5)
+    finally:
+        motor.cleanup()
