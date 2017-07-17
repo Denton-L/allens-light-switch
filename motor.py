@@ -1,5 +1,3 @@
-#!/usr/bin/env python2
-
 import RPi.GPIO as GPIO
 
 class Motor:
